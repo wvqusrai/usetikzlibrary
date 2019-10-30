@@ -1,0 +1,10 @@
+\documentclass{article}
+\usepackage{tikz,fp}
+\usetikzlibrary{fixedpointarithmetic} % LATEX and plain TEX when using TikZ
+\begin{document}
+\begin{tikzpicture}[fixed point arithmetic={scale results=10^-6}]
+\draw [help lines] grid (3,2);
+\draw (0,0) -- (2,2);
+\draw [red, line width=4pt] (*1.0e6,0) -- (*3.0e6,*2.0e6);
+\end{tikzpicture}
+\end{document}
