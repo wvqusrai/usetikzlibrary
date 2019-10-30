@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\begin{document}
+\begin{tikzpicture}[show background rectangle]
+\draw (0,0) ellipse (10mm and 5mm);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+[background rectangle/.style={fill=yellow},
+framed,
+show background top,
+outer frame xsep=1ex]
+\draw (0,0) ellipse (10mm and 5mm);
+\end{tikzpicture}
+\end{document}

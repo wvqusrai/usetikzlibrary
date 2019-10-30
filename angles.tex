@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes}
+\begin{document}
+\tikz \draw [line width=2mm]
+(2,0) coordinate (A) -- (0,0) coordinate (B)
+-- (1,1) coordinate (C)
+pic [draw=blue, fill=blue!50, angle radius=1cm] {angle};
+
+\tikz \draw (2,0) coordinate (A) -- (0,0) coordinate (B) -- (1,1) coordinate (C)
+pic ["$\alpha$", draw, ->] {angle};
+
+\tikz \draw (2,0) coordinate (A) -- (0,0) coordinate (B) -- (1,1) coordinate (C)
+pic ["$\alpha$", draw, angle eccentricity=1] {angle};
+
+\tikz {
+    \draw (2,0) coordinate (A) -- (0,0) coordinate (B) -- (1,1) coordinate (C)
+    pic (alpha) ["$\alpha$", draw] {angle};
+    
+    \draw (alpha) circle [radius=5pt];
+}
+
+\tikz
+\draw (0,0,0) coordinate (O)
+(1,0,0) coordinate (A) -- (O)
+(0,0,1) coordinate (B) -- (O)
+(0,1,0) coordinate (C) -- (O)
+pic [fill=gray,angle radius=4mm] {right angle = A--O--B}
+pic [draw,red,thick,angle eccentricity=.5,pic text=.]
+{right angle = A--O--C};
+\end{document}
